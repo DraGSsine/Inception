@@ -1,0 +1,14 @@
+{
+    "name": "status-page",
+    "version": "1.0.0",
+    "description": "Simple status page for services",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "axios": "^0.21.1",
+      "tcp-ping": "^0.1.1"
+    }
+}  

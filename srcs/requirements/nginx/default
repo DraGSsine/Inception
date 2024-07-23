@@ -1,0 +1,17 @@
+server {
+    listen 443 ssl;
+
+    server_name youchen.42.fr;
+
+    ssl_certificate /etc/ssl/certs/youchen.42.fr.crt;
+    ssl_certificate_key /etc/ssl/private/youchen.42.fr.key;
+    ssl_protocols TLSv1.3;
+
+    root /var/www/html;
+    index index.php;
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass wordpress:9000;
+    }
+}

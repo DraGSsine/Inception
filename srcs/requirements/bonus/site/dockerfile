@@ -1,0 +1,16 @@
+FROM debian:bullseye
+
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install curl -y
+
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+
+RUN apt-get install -y nodejs
+
+COPY ./site-setup.sh /site-setup.sh
+
+COPY ./portofolio /portofolio
+RUN chmod +x /site-setup.sh
+
+ENTRYPOINT [ "./site-setup.sh" ]
