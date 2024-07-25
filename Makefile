@@ -1,6 +1,5 @@
 WP_DATA = /home/data/wordpress
 DB_DATA = /home/data/mariadb
-RD_DATA = /home/data/redis 
 
 all: up
 
@@ -31,7 +30,6 @@ clean:
 	-docker network rm $$(docker network ls -q)
 	-rm -rf $(WP_DATA)
 	-rm -rf $(DB_DATA)
-	-rm -rf $(RD_DATA)
 
 # clean and start the containers
 re: clean up

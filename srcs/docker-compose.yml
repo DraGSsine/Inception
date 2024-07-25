@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   mariadb:
     image: mariadb
@@ -74,7 +72,18 @@ services:
       - "6379:6379"
     networks:
       - inception
-
+  ftp:
+    image: ftp
+    container_name: ftp
+    build: ./requirements/bonus/ftp
+    restart: always
+    ports:
+      - "21:21"
+      - "30000-30050:30000-30050"
+    volumes:
+      - wordpress:/home/ftpusers/www
+    networks:
+      - inception
 
 volumes:
   mariadb:
