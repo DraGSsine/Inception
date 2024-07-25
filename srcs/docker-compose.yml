@@ -79,9 +79,8 @@ services:
     restart: always
     ports:
       - "21:21"
-      - "30000-30050:30000-30050"
     volumes:
-      - wordpress:/home/ftpusers/www
+      - wordpress:/home/youchen
     networks:
       - inception
 

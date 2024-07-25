@@ -4,7 +4,6 @@ DB_DATA = /home/data/mariadb
 all: up
 
 up: build
-	-mkdir $(RD_DATA)
 	-mkdir $(WP_DATA)
 	-mkdir $(DB_DATA)
 	docker-compose -f ./srcs/docker-compose.yml up -d

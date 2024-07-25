@@ -1,11 +1,15 @@
 FROM debian:bullseye
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y vsftpd
 
-COPY ./ftp-config.sh /ftp-config.sh
+RUN mkdir -p /var/run/vsftpd/empty
 
-RUN chmod +x /ftp-config.sh
+COPY ./conf/vsftpd.conf /etc/vsftpd.conf
 
-ENTRYPOINT [ "./ftp-config.sh" ]
+COPY ./tools/setup.sh ./
+
+RUN chmod +x setup.sh
+
+ENTRYPOINT [ "./setup.sh" ]
