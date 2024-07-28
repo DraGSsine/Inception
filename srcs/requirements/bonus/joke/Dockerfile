@@ -14,4 +14,4 @@ COPY ./app /app
 
 RUN chmod +x /joke.sh
 
-CMD ["./joke.sh"]
+ENTRYPOINT ["./joke.sh"]

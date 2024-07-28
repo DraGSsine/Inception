@@ -1,6 +1,6 @@
 #!/bin/bash
 
-useradd -m -s youchen
+useradd -m youchen
 
 echo "youchen:123" | chpasswd
 

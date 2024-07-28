@@ -15,4 +15,4 @@ RUN openssl req -nodes -x509 -subj \
     -keyout /etc/ssl/private/youchen.42.fr.key \
     -out /etc/ssl/certs/youchen.42.fr.crt
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
