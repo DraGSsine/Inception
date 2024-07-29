@@ -21,8 +21,8 @@ wp redis enable --allow-root
 
 chown -R youchen /var/www/
 chmod -R 777 /var/www/
-chown -R www-data /var/www/html/wp-content
-chmod -R 775 /var/www/html/wp-content
+chown -R www-data:www-data /var/www/html
+chmod -R 777 /var/www/html
 
 sed -i 's|^listen = /run/php/php7.4-fpm.sock|listen = 9000|' /etc/php/7.4/fpm/pool.d/www.conf
 php-fpm7.4 -F
