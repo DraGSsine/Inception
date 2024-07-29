@@ -10,7 +10,7 @@ RUN apt-get install -y nodejs
 
 COPY ./site-setup.sh /site-setup.sh
 
-COPY ./portofolio /portofolio
+COPY ./jokeGenerator /jokeGenerator
 RUN chmod +x /site-setup.sh
 
 ENTRYPOINT [ "./site-setup.sh" ]

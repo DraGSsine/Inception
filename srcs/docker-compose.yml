@@ -76,13 +76,10 @@ services:
     image: ftp
     container_name: ftp
     build: ./requirements/bonus/ftp
+    network_mode: host
     restart: always
-    ports:
-      - "21:21"
     volumes:
       - wordpress:/home/youchen
-    networks:
-      - inception
 
 volumes:
   mariadb:
@@ -90,14 +87,14 @@ volumes:
     name: mariadb
     driver_opts:
       type: none
-      device: /home/data/mariadb
+      device: /home/youchen/data/mariadb
       o: bind
   wordpress:
     driver: local
     name: wordpress
     driver_opts:
       type: none
-      device: /home/data/wordpress
+      device: /home/youchen/data/wordpress
       o: bind
 
 

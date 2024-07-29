@@ -1,5 +1,5 @@
 const express = require('express');
-const axios = require('axios');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -55,6 +55,8 @@ const jokes = [
     punchline: "They don't have the guts!"
   }
 ];
+
+app.use(cors());
 
 app.get('/', async (req, res) => {
   const randomNumber = Math.floor(Math.random() * 11);

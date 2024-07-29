@@ -1,11 +1,11 @@
-WP_DATA = /home/data/wordpress
-DB_DATA = /home/data/mariadb
+WP_DATA = /home/youchen/data/wordpress
+DB_DATA = /home/youchen/data/mariadb
 
 all: up
 
 up: build
-	-mkdir $(WP_DATA)
-	-mkdir $(DB_DATA)
+	-mkdir -p $(WP_DATA)
+	-mkdir -p $(DB_DATA)
 	docker-compose -f ./srcs/docker-compose.yml up -d
 
 down:

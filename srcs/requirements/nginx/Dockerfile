@@ -4,10 +4,6 @@ RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y nginx openssl
 
-RUN chmod -R +755 /var/www/html
-
-RUN chown -R www-data:www-data /var/www/html
-
 COPY ./default /etc/nginx/sites-available/default
 
 RUN openssl req -nodes -x509 -subj \
