@@ -80,6 +80,8 @@ services:
     restart: always
     volumes:
       - wordpress:/home/youchen
+    depends_on:
+      - wordpress
 
 volumes:
   mariadb:
