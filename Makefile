@@ -31,6 +31,3 @@ clean:
 	-rm -rf $(DB_DATA)
 
 re: clean up
-
-prune: clean
-	-docker system prune -a --volumes -f
