@@ -1,8 +1,8 @@
 #!/bin/bash
 
-useradd -m youchen
+useradd -m $USER
 
-echo "youchen:123" | chpasswd
+echo "$USER:$PASS" | chpasswd
 
 chown -R youchen /home/youchen
 
