@@ -20,7 +20,6 @@ start:
 build:
 	docker-compose -f ./srcs/docker-compose.yml build
 
-
 clean:
 	-docker stop $$(docker ps -aq)
 	-docker rm $$(docker ps -aq)
